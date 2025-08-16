@@ -1,21 +1,215 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>ObsidianOS Files - Do not download.</title>
-<style>
-html { color-scheme: light dark; }
-body { width: 35em; margin: 0 auto;
-font-family: Tahoma, Verdana, Arial, sans-serif; }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ObsidianOS Files - Uploading...</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #0a0a0f;
+            color: #e6e8eb;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        
+
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+        
+        .header {
+            margin-bottom: 3rem;
+        }
+        
+        .logo {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 1.5rem;
+            animation: upload-pulse 2s infinite;
+        }
+        
+        @keyframes upload-pulse {
+            0%, 100% { transform: scale(1) rotate(0deg); }
+            25% { transform: scale(1.05) rotate(2deg); }
+            50% { transform: scale(1.02) rotate(-1deg); }
+            75% { transform: scale(1.05) rotate(1deg); }
+        }
+        
+        .title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #1f6feb;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            color: #8b949e;
+            margin-bottom: 2rem;
+        }
+        
+        .status-card {
+            background: #101018;
+            border: 1px solid #1f6feb;
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .status-indicator {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            background: #3498db;
+            border-radius: 50%;
+            margin-right: 0.5rem;
+            animation: upload-blink 1s infinite;
+        }
+        
+        @keyframes upload-blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0.4; }
+        }
+        
+        .status-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #3498db;
+        }
+        
+        .status-text {
+            color: #8b949e;
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+        
+        .spinner {
+            width: 60px;
+            height: 60px;
+            border: 4px solid #2a2a3a;
+            border-top: 4px solid #3498db;
+            border-radius: 50%;
+            margin: 1.5rem auto;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .content-card {
+            background: #101018;
+            border: 1px solid #2a2a3a;
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .download-btn {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            font-size: 1rem;
+            font-weight: 600;
+            color: white;
+            background: #1f6feb;
+            border: none;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: background-color 0.2s ease;
+            margin: 0.5rem;
+        }
+        
+        .download-btn:hover {
+            background: #2d7be5;
+        }
+        
+        .secondary-btn {
+            background: #2a2a3a;
+            border: 1px solid #3a3a4a;
+        }
+        
+        .secondary-btn:hover {
+            background: #3a3a4a;
+        }
+        
+        .info-text {
+            color: #8b949e;
+            margin: 1rem 0;
+        }
+        
+        .footer {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #8b949e;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 2rem 1rem;
+            }
+            
+            .title {
+                font-size: 2.5rem;
+            }
+            
+            .content-card, .status-card {
+                padding: 2rem 1.5rem;
+            }
+        }
+    </style>
 </head>
 <body>
-<h1>ObsidianOS Files - Uploading</h1>
-<p>ObsidianOS's latest ISO should be hosted here, but currently it is being uploaded. Older ISOs are available at sourceforge.</p>
+    <div class="container">
+        <div class="header">
+            <div class="logo">
+                <img src="https://obsidianos.xyz/logo.png" alt="ObsidianOS Logo" style="width: 100%; height: 80px; object-fit: contain;">
+            </div>
+            <h1 class="title">ObsidianOS Files</h1>
+            <p class="subtitle">Uploading new ISO...</p>
+        </div>
+        
+        <div class="status-card">
+            <div class="status-title">
+                <span class="status-indicator"></span>
+                ISO Upload in Progress
+            </div>
+            <p class="status-text">A new ObsidianOS ISO is currently being uploaded and will be available shortly.</p>
+                    <div class="spinner"></div>
+        <p class="status-text">Refresh the page to check current status</p>
+        </div>
+        
+        <div class="content-card">
+            <h2 style="font-size: 1.5rem; margin-bottom: 1rem; color: #1f6feb;">Please Wait</h2>
+            <p class="info-text">The new ISO is being uploaded. Please wait for the upload to complete before downloading.</p>
+            <p class="info-text">You can also download an older version while you wait.</p>
+        </div>
+        
+        <div class="content-card">
+            <h2 style="font-size: 1.5rem; margin-bottom: 1rem; color: #1f6feb;">Previous Releases</h2>
+            <p class="info-text">Browse older versions and legacy ISOs</p>
+            <a href="https://sourceforge.net/projects/obsidianos/" target="_blank" rel="noopener noreferrer" class="download-btn secondary-btn">Browse on SourceForge</a>
+        </div>
+        
+        <div class="footer">
+            <p>Thank you for using ObsidianOS!</p>
+        </div>
+    </div>
+    
 
-<p>For the latest ISO, please wait for it to be uploaded. This usually takes 5 to 10 minutes. You can also get an older ISO.<br>
-For older ISOs, go to 
-<a href="https://sourceforge.net/projects/obsidianos/">sourceforge</a>.</p>
-
-<p><em>Thank you for using ObsidianOS!</em></p>
 </body>
 </html>
