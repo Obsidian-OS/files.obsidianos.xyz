@@ -7,14 +7,7 @@
     <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <div class="logo">
-                <img src="https://obsidianos.xyz/logo.png" alt="ObsidianOS Logo" style="width: 100%; height: 100%; object-fit: contain;">
-            </div>
-            <h1 class="title">ObsidianOS Files</h1>
-            <p class="subtitle">Building new images...</p>
-        </div>
+    <?php include "/var/www/header.php"?>
         
         <div class="status-card">
             <div class="status-title">
