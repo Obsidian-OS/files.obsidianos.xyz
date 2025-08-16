@@ -1,1 +1,1 @@
-<?php include "/var/www/normal.html"; ?>
+<?php include "/var/www/index.html"; ?>
