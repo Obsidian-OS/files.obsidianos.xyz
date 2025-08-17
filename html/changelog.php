@@ -129,7 +129,7 @@
             <p class="subtitle">Latest version only</p>
         </div>
         
-        <p><?php import ../changelog.txt; ?></p>
+        <p><?php import "../changelog.txt"; ?></p>
         <div class="footer">
             <p>Thank you for using ObsidianOS!</p>
         </div>
