@@ -6,13 +6,13 @@
     <title>ObsidianOS Files</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
-        
+
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
         }
-        
+
         body {
             font-family: 'Inter', sans-serif;
             background: #0a0a0f;
@@ -20,53 +20,78 @@
             line-height: 1.6;
             min-height: 100vh;
         }
-        
 
-        
         .container {
-            max-width: 800px;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 4rem 2rem;
             text-align: center;
         }
-        
+
         .header {
             margin-bottom: 3rem;
         }
-        
+
         .logo {
             width: 80px;
             height: 80px;
             margin: 0 auto 1.5rem;
         }
-        
+
         .title {
             font-size: 2.5rem;
             font-weight: 700;
             margin-bottom: 1rem;
             color: #1f6feb;
         }
-        
+
         .subtitle {
             font-size: 1.2rem;
             color: #8b949e;
             margin-bottom: 2rem;
         }
-        
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
         .content-card {
             background: #101018;
             border: 1px solid #2a2a3a;
             border-radius: 12px;
             padding: 2rem;
-            margin-bottom: 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
-        
+
+        .card-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #1f6feb;
+        }
+
+        .card-logo {
+            width: 100px;
+            height: 100px;
+            margin-bottom: 1.5rem;
+            object-fit: contain;
+        }
+
         .download-section {
-            margin-bottom: 2rem;
+            width: 100%;
         }
-        
+
         .download-btn {
-            display: inline-block;
+            display: block;
+            width: calc(100% - 1rem);
             padding: 0.8rem 1.5rem;
             font-size: 1rem;
             font-weight: 600;
@@ -76,43 +101,43 @@
             border-radius: 8px;
             text-decoration: none;
             transition: background-color 0.2s ease;
-            margin: 0.5rem;
+            margin: 0.5rem auto;
         }
-        
+
         .download-btn:hover {
             background: #2d7be5;
         }
-        
+
         .secondary-btn {
             background: #2a2a3a;
             border: 1px solid #3a3a4a;
         }
-        
+
         .secondary-btn:hover {
             background: #3a3a4a;
         }
-        
+
         .info-text {
             color: #8b949e;
             margin: 1rem 0;
         }
-        
+
         .footer {
             margin-top: 3rem;
             padding-top: 2rem;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
             color: #8b949e;
         }
-        
+
         @media (max-width: 768px) {
             .container {
                 padding: 2rem 1rem;
             }
-            
+
             .title {
                 font-size: 2.5rem;
             }
-            
+
             .content-card {
                 padding: 2rem 1.5rem;
             }
@@ -129,38 +154,46 @@
             <p class="subtitle">Latest ISO downloads and resources</p>
             <a href="/changelog.php" class="download-btn secondary-btn">Changelog</a>
         </div>
-        
-        <div class="content-card">
-            <div class="download-section">
-                <h2 style="font-size: 1.5rem; margin-bottom: 1rem; color: #1f6feb;">Latest ISO</h2>
-                <p class="info-text">Get the most recent ObsidianOS release</p>
-                <a href="/latest.iso" class="download-btn">Download Latest ISO</a>
-                <a href="/latest.iso.sha256" class="download-btn secondary-btn">SHA256</a>
+
+        <div class="card-grid">
+            <div class="content-card">
+                <h2 class="card-title">Minimal Edition</h2>
+                <img src="https://obsidianos.xyz/logo.png" class="card-logo" alt="ObsidianOS Logo"></img>
+                <p class="info-text">Get the most recent ObsidianOS minimal release</p>
+                <div class="download-section">
+                    <a href="/latest.iso" class="download-btn">Download Latest ISO</a>
+                    <a href="/latest.iso.sha256" class="download-btn secondary-btn">SHA256</a>
+                </div>
+            </div>
+            <div class="content-card">
+                <h2 class="card-title">KDE Edition</h2>
+                <img src="https://develop.kde.org/img/kde-logo-white-blue-rounded-source.svg" alt="KDE Logo" class="card-logo">
+                <p class="info-text">Get the most recent ObsidianOS KDE release</p>
+                <div class="download-section">
+                    <a href="/latestKDE.iso" class="download-btn">Download Latest KDE ISO</a>
+                    <a href="/latestKDE.iso.sha256" class="download-btn secondary-btn">SHA256</a>
+                </div>
+            </div>
+            <div class="content-card">
+                <h2 class="card-title">COSMIC Edition</h2>
+                <img src="https://cdn11.bigcommerce.com/s-pywjnxrcr2/images/stencil/original/image-manager/znbla5m069vx10kz-cosmic-sectiontutorial-orange.png" alt="COSMIC Logo" class="card-logo">
+                <p class="info-text">Get the most recent ObsidianOS COSMIC release <b>(COSMIC IS IN ALPHA)</b></p>
+                <div class="download-section">
+                    <a href="/latestCosmic.iso" class="download-btn">Download Latest COSMIC ISO</a>
+                    <a href="/latestCosmic.iso.sha256" class="download-btn secondary-btn">SHA256</a>
+                </div>
+            </div>
+
+            <!-- Older Releases Card -->
+            <div class="content-card">
+                <h2 class="card-title">Older Releases</h2>
+                <p class="info-text">Previous versions and legacy ISOs</p>
+                <div class="download-section">
+                    <a href="https://sourceforge.net/projects/obsidianos/" target="_blank" rel="noopener noreferrer" class="download-btn secondary-btn">Browse on SourceForge</a>
+                </div>
             </div>
         </div>
-        
-        <div class="content-card">
-            <div class="download-section">
-                <h2 style="font-size: 1.5rem; margin-bottom: 1rem; color: #1f6feb;">Latest ISO</h2>
-                <p class="info-text">Get the most recent ObsidianOS release <b>(KDE Edition)</b> </p>
-                <a href="/latestKDE.iso" class="download-btn">Download Latest KDE ISO</a>
-                <a href="/latestKDE.iso.sha256" class="download-btn secondary-btn">SHA256</a>
-            </div>
-        </div>
-        <div class="content-card">
-            <div class="download-section">
-                <h2 style="font-size: 1.5rem; margin-bottom: 1rem; color: #1f6feb;">Latest ISO</h2>
-                <p class="info-text">Get the most recent ObsidianOS release <b>(Cosmic-rs edition) (COSMIC IS IN ALPHA)</b> </p>
-                <a href="/latestCosmic.iso" class="download-btn">Download Latest Cosmic ISO</a>
-                <a href="/latestCosmic.iso.sha256" class="download-btn secondary-btn">SHA256</a>
-            </div>
-        </div>
-        <div class="content-card">
-            <h2 style="font-size: 1.5rem; margin-bottom: 1rem; color: #1f6feb;">Older Releases</h2>
-            <p class="info-text">Previous versions and legacy ISOs</p>
-            <a href="https://sourceforge.net/projects/obsidianos/" target="_blank" rel="noopener noreferrer" class="download-btn secondary-btn">Browse on SourceForge</a>
-        </div>
-        
+
         <div class="footer">
             <p>Thank you for using ObsidianOS!</p>
         </div>
