@@ -6,7 +6,6 @@
     <title>ObsidianOS Files</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
-
         * {
             box-sizing: border-box;
             margin: 0;
@@ -129,6 +128,11 @@
             color: #8b949e;
         }
 
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
         @media (max-width: 768px) {
             .container {
                 padding: 2rem 1rem;
@@ -155,48 +159,61 @@
             <a href="/changelog.php" class="download-btn secondary-btn">Changelog</a>
         </div>
 
-        <div class="card-grid">
-            <div class="content-card">
-                <h2 class="card-title">Minimal Edition</h2>
-                <img src="https://obsidianos.xyz/logo.png" class="card-logo" alt="ObsidianOS Logo"></img>
-                <p class="info-text">Get the most recent ObsidianOS minimal release</p>
-                <div class="download-section">
-                    <a href="/latest.iso" class="download-btn">Download Latest ISO</a>
-                    <a href="/latest.iso.sha256" class="download-btn secondary-btn">SHA256</a>
-                </div>
-            </div>
-            <div class="content-card">
-                <h2 class="card-title">KDE Edition</h2>
-                <img src="https://develop.kde.org/img/kde-logo-white-blue-rounded-source.svg" alt="KDE Logo" class="card-logo">
-                <p class="info-text">Get the most recent ObsidianOS KDE release</p>
-                <div class="download-section">
-                    <a href="/latestKDE.iso" class="download-btn">Download Latest KDE ISO</a>
-                    <a href="/latestKDE.iso.sha256" class="download-btn secondary-btn">SHA256</a>
-                </div>
-            </div>
-            <div class="content-card">
-                <h2 class="card-title">COSMIC Edition</h2>
-                <img src="https://cdn11.bigcommerce.com/s-pywjnxrcr2/images/stencil/original/image-manager/znbla5m069vx10kz-cosmic-sectiontutorial-orange.png" alt="COSMIC Logo" class="card-logo">
-                <p class="info-text">Get the most recent ObsidianOS COSMIC release <b>(COSMIC IS IN ALPHA)</b></p>
-                <div class="download-section">
-                    <a href="/latestCosmic.iso" class="download-btn">Download Latest COSMIC ISO</a>
-                    <a href="/latestCosmic.iso.sha256" class="download-btn secondary-btn">SHA256</a>
-                </div>
-            </div>
+        <div id="loading-bar" style="display: flex; justify-content: center; align-items: center; height: 100px; margin-bottom: 2rem;">
+            <div style="border: 4px solid #f3f3f3; border-top: 4px solid #1f6feb; border-radius: 50%; width: 40px; height: 40px; animation: spin 1s linear infinite;"></div>
+        </div>
 
-            <!-- Older Releases Card -->
-            <div class="content-card">
-                <h2 class="card-title">Older Releases</h2>
-                <p class="info-text">Previous versions and legacy ISOs</p>
-                <div class="download-section">
-                    <a href="https://sourceforge.net/projects/obsidianos/" target="_blank" rel="noopener noreferrer" class="download-btn secondary-btn">Browse on SourceForge</a>
-                </div>
-            </div>
+        <div class="card-grid">
         </div>
 
         <div class="footer">
             <p>Thank you for using ObsidianOS!</p>
         </div>
     </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const loadingBar = document.getElementById('loading-bar');
+            const cardGrid = document.querySelector('.card-grid');
+            loadingBar.style.display = 'flex'; 
+            fetch('builds.json')
+                .then(response => response.json())
+                .then(builds => {
+                    loadingBar.style.display = 'none'; 
+                    builds.forEach(build => {
+                        const card = document.createElement('div');
+                        card.classList.add('content-card');
+                        let infoText = build.info;
+                        card.innerHTML = `
+                            <h2 class="card-title">${build.name}</h2>
+                            <img src="${build.icon_url}" class="card-logo" alt="${build.name} Logo">
+                            <p class="info-text">${infoText}</p>
+                            <div class="download-section">
+                                <a href="${build.iso_url}" class="download-btn">Download Latest ${build.name.replace(' Edition', '')} ISO</a>
+                                <a href="${build.sha256_url}" class="download-btn secondary-btn">SHA256</a>
+                            </div>
+                        `;
+                        cardGrid.appendChild(card);
+                    });
+
+                    
+                    const olderReleasesCard = document.createElement('div');
+                    olderReleasesCard.classList.add('content-card');
+                    olderReleasesCard.innerHTML = `
+                        <h2 class="card-title">Older Releases</h2>
+                        <p class="info-text">Previous versions and legacy ISOs</p>
+                        <div class="download-section">
+                            <a href="https://sourceforge.net/projects/obsidianos/" target="_blank" rel="noopener noreferrer" class="download-btn secondary-btn">Browse on SourceForge</a>
+                        </div>
+                    `;
+                    cardGrid.appendChild(olderReleasesCard);
+
+                })
+                .catch(error => {
+                    console.error('Error fetching builds:', error);
+                    loadingBar.style.display = 'none'; 
+                });
+        });
+    </script>
 </body>
 </html>

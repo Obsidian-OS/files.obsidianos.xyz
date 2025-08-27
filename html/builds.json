@@ -1,0 +1,27 @@
+[
+  {
+    "graphical": false,
+    "name": "Minimal Edition",
+    "icon_url": "https://obsidianos.xyz/logo.png",
+    "iso_url": "/latest.iso",
+    "sha256_url": "/latest.iso.sha256",
+    "info": "Get the most recent ObsidianOS minimal release"
+  },
+  {
+    "graphical": true,
+    "name": "KDE Edition",
+    "icon_url": "https://develop.kde.org/img/kde-logo-white-blue-rounded-source.svg",
+    "iso_url": "/latestKDE.iso",
+    "sha256_url": "/latestKDE.iso.sha256",
+    "info": "Get the most recent ObsidianOS KDE release"
+  },
+  {
+    "graphical": true,
+    "name": "COSMIC Edition",
+    "icon_url": "https://cdn11.bigcommerce.com/s-pywjnxrcr2/images/stencil/original/image-manager/znbla5m069vx10kz-cosmic-sectiontutorial-orange.png",
+    "iso_url": "/latestCosmic.iso",
+    "sha256_url": "/latestCosmic.iso.sha256",
+    "info": "Get the most recent ObsidianOS COSMIC release <b>(COSMIC IS IN ALPHA)</b>"
+  }
+]
+
