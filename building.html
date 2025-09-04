@@ -3,17 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ObsidianOS Files - Building...</title>
+    <title>BUILDING - ObsidianOS Files</title>
     <meta http-equiv="refresh" content="10">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
-        
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
         }
-        
+
         body {
             font-family: 'Inter', sans-serif;
             background: #0a0a0f;
@@ -21,105 +20,78 @@
             line-height: 1.6;
             min-height: 100vh;
         }
-        
 
-        
         .container {
-            max-width: 800px;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 4rem 2rem;
             text-align: center;
         }
-        
+
         .header {
             margin-bottom: 3rem;
         }
-        
+
         .logo {
             width: 80px;
             height: 80px;
             margin: 0 auto 1.5rem;
-            animation: pulse 2s infinite;
         }
-        
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-        }
-        
+
         .title {
             font-size: 2.5rem;
             font-weight: 700;
             margin-bottom: 1rem;
-            color: #9b59b6;
+            color: #1f6feb;
         }
-        
+
         .subtitle {
             font-size: 1.2rem;
             color: #8b949e;
             margin-bottom: 2rem;
         }
-        
-        .status-card {
-            background: #101018;
-            border: 1px solid #9b59b6;
-            border-radius: 12px;
-            padding: 2rem;
+
+        .card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
             margin-bottom: 2rem;
         }
-        
-        .status-indicator {
-            display: inline-block;
-            width: 12px;
-            height: 12px;
-            background: #f39c12;
-            border-radius: 50%;
-            margin-right: 0.5rem;
-            animation: blink 1.5s infinite;
-        }
-        
-        @keyframes blink {
-            0%, 50% { opacity: 1; }
-            51%, 100% { opacity: 0.3; }
-        }
-        
-        .status-title {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: #f39c12;
-        }
-        
-        .status-text {
-            color: #8b949e;
-            margin-bottom: 1.5rem;
-            font-size: 1.1rem;
-        }
-        
-        .spinner {
-            width: 60px;
-            height: 60px;
-            border: 4px solid #2a2a3a;
-            border-top: 4px solid #f39c12;
-            border-radius: 50%;
-            margin: 1.5rem auto;
-            animation: spin 1s linear infinite;
-        }
-        
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-        
+
         .content-card {
             background: #101018;
             border: 1px solid #2a2a3a;
             border-radius: 12px;
             padding: 2rem;
-            margin-bottom: 2rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
-        
+
+        .card-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #1f6feb;
+        }
+
+        .card-logo {
+            width: 100px;
+            height: 100px;
+            margin-bottom: 1.5rem;
+            object-fit: contain;
+        }
+
+        .download-section {
+            width: 100%;
+        }
+
         .download-btn {
-            display: inline-block;
+            display: block;
+            width: calc(100% - 1rem);
             padding: 0.8rem 1.5rem;
             font-size: 1rem;
             font-weight: 600;
@@ -129,44 +101,49 @@
             border-radius: 8px;
             text-decoration: none;
             transition: background-color 0.2s ease;
-            margin: 0.5rem;
+            margin: 0.5rem auto;
         }
-        
+
         .download-btn:hover {
             background: #2d7be5;
         }
-        
+
         .secondary-btn {
             background: #2a2a3a;
             border: 1px solid #3a3a4a;
         }
-        
+
         .secondary-btn:hover {
             background: #3a3a4a;
         }
-        
+
         .info-text {
             color: #8b949e;
             margin: 1rem 0;
         }
-        
+
         .footer {
             margin-top: 3rem;
             padding-top: 2rem;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
             color: #8b949e;
         }
-        
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
         @media (max-width: 768px) {
             .container {
                 padding: 2rem 1rem;
             }
-            
+
             .title {
                 font-size: 2.5rem;
             }
-            
-            .content-card, .status-card {
+
+            .content-card {
                 padding: 2rem 1.5rem;
             }
         }
@@ -179,53 +156,65 @@
                 <a href="https://obsidianos.xyz/"><img src="https://obsidianos.xyz/logo.png" alt="ObsidianOS Logo" style="width: 100%; height: 100%; object-fit: contain;"></a>
             </div>
             <h1 class="title">ObsidianOS Files</h1>
-            <p class="subtitle">Building new images...</p>
+            <p class="subtitle">ISOs currently building. You may download the ISOs here but they will soon be replaced by the latest version. Refreshing status in 10 seconds...</p>
         </div>
-        
-        <div class="status-card">
-            <div class="status-title">
-                <span class="status-indicator"></span>
-                ISO Building in Progress
-            </div>
-            <p class="status-text">A new ObsidianOS ISO is currently being built and will be available soon.</p>
-                    <div class="spinner"></div>
-        <p class="status-text">Refreshing in 10 seconds...</p>
+
+        <div id="loading-bar" style="display: flex; justify-content: center; align-items: center; height: 100px; margin-bottom: 2rem;">
+            <div style="border: 4px solid #f3f3f3; border-top: 4px solid #1f6feb; border-radius: 50%; width: 40px; height: 40px; animation: spin 1s linear infinite;"></div>
         </div>
-        
-        <div class="content-card">
-            <h2 style="font-size: 1.5rem; margin-bottom: 1rem; color: #1f6feb;">Latest Published ISO</h2>
-            <p class="info-text">While the new version builds, you can download the most recent stable release</p>
-            <a href="/latest.iso" class="download-btn">Download Latest ISO</a>
-            <a href="/latest.iso.sha256" class="download-btn secondary-btn">SHA256</a>
+
+        <div class="card-grid">
         </div>
-      <div class="content-card">
-            <div class="download-section">
-                <h2 style="font-size: 1.5rem; margin-bottom: 1rem; color: #1f6feb;">Latest ISO</h2>
-                <p class="info-text">While the new version builds, you can download the most recent stable release <b>(KDE Edition)</b> </p>
-                <a href="/latestKDE.iso" class="download-btn">Download Latest KDE ISO</a>
-                <a href="/latestKDE.iso.sha256" class="download-btn secondary-btn">SHA256</a>
-            </div>
-        </div>
-         <div class="content-card">
-            <div class="download-section">
-                <h2 style="font-size: 1.5rem; margin-bottom: 1rem; color: #1f6feb;">Latest ISO</h2>
-                <p class="info-text">While the new version builds, you can download the most recent stable release <b>(Cosmic-rs) (COSMIC IS IN ALPHA)</b> </p>
-                <a href="/latestCosmic.iso" class="download-btn">Download Latest Cosmic ISO</a>
-                <a href="/latestCosmic.iso.sha256" class="download-btn secondary-btn">SHA256</a>
-            </div>
-        </div>     
-        
-        <div class="content-card">
-            <h2 style="font-size: 1.5rem; margin-bottom: 1rem; color: #1f6feb;">Previous Releases</h2>
-            <p class="info-text">Browse older versions and legacy ISOs</p>
-            <a href="https://sourceforge.net/projects/obsidianos/" target="_blank" rel="noopener noreferrer" class="download-btn secondary-btn">Browse on SourceForge</a>
-        </div>
-        
+
         <div class="footer">
             <p>Thank you for using ObsidianOS!</p>
         </div>
     </div>
-    
 
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const loadingBar = document.getElementById('loading-bar');
+            const cardGrid = document.querySelector('.card-grid');
+            loadingBar.style.display = 'flex'; 
+            fetch('builds.json')
+                .then(response => response.json())
+                .then(builds => {
+                    loadingBar.style.display = 'none'; 
+                    builds.forEach(build => {
+                        const card = document.createElement('div');
+                        card.classList.add('content-card');
+                        let infoText = build.info;
+                        card.innerHTML = `
+                            <h2 class="card-title">${build.name}</h2>
+                            <img src="${build.icon_url}" class="card-logo" alt="${build.name} Logo">
+                            <p class="info-text">${infoText}</p>
+                            <div class="download-section">
+                                <a href="${build.iso_url}" class="download-btn">Download Latest ${build.name.replace(' Edition', '')} ISO</a>
+                                <a href="${build.sha256_url}" class="download-btn secondary-btn">SHA256</a>
+                                <a href="${build.gpg_url}" class="download-btn secondary-btn">Signature</a>
+                            </div>
+                        `;
+                        cardGrid.appendChild(card);
+                    });
+
+                    
+                    const olderReleasesCard = document.createElement('div');
+                    olderReleasesCard.classList.add('content-card');
+                    olderReleasesCard.innerHTML = `
+                        <h2 class="card-title">Older Releases</h2>
+                        <p class="info-text">Previous versions and legacy ISOs</p>
+                        <div class="download-section">
+                            <a href="https://sourceforge.net/projects/obsidianos/" target="_blank" rel="noopener noreferrer" class="download-btn secondary-btn">Browse on SourceForge</a>
+                        </div>
+                    `;
+                    cardGrid.appendChild(olderReleasesCard);
+
+                })
+                .catch(error => {
+                    console.error('Error fetching builds:', error);
+                    loadingBar.style.display = 'none'; 
+                });
+        });
+    </script>
 </body>
 </html>
