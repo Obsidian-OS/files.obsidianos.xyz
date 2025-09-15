@@ -3,4 +3,4 @@ File uploading website. Does not include ISOs.
 
 This page is hosted at https://files.obsidianos.xyz/.
 
-Hosted on [TheOddCell](https://github.com/TheOddCell)'s rPi 4.
+Hosted on [TheOddCell](https://github.com/TheOddCell)'s Raspberry Pi 5.
