@@ -1,12 +1,12 @@
 [
   {
     "graphical": false,
-    "name": "Minimal Edition",
+    "name": "Base Edition",
     "icon_url": "https://obsidianos.xyz/logo.png",
     "iso_url": "/latest.iso",
     "sha256_url": "/latest.iso.sha256",
     "gpg_url": "/latest.iso.asc",
-    "info": "Get the most recent ObsidianOS minimal release"
+    "info": "Get the most recent ObsidianOS minimal/base release"
   },
   {
     "graphical": true,
