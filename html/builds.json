@@ -2,11 +2,11 @@
   {
     "graphical": false,
     "name": "Base Edition",
-    "icon_url": "https://obsidianos.xyz/logo.png",
+    "icon_url": "https://obsidianos.xyz/logo.svg",
     "iso_url": "/latest.iso",
     "sha256_url": "/latest.iso.sha256",
     "gpg_url": "/latest.iso.asc",
-    "info": "Get the most recent ObsidianOS minimal/base release"
+    "info": "The minimalist ObsidianOS Edition, comes with a TUI installer."
   },
   {
     "graphical": true,
@@ -15,7 +15,7 @@
     "iso_url": "/latestKDE.iso",
     "sha256_url": "/latestKDE.iso.sha256",
     "gpg_url": "/latestKDE.iso.asc",
-    "info": "Get the most recent ObsidianOS KDE release"
+    "info": "Experience ObsidianOS with KDE Plasma desktop environment! <b>Recommended</b>"
   },
   {
     "graphical": true,
@@ -24,7 +24,7 @@
     "iso_url": "/latestCosmic.iso",
     "sha256_url": "/latestCosmic.iso.sha256",
     "gpg_url": "/latestCosmic.iso.asc",
-    "info": "Get the most recent ObsidianOS COSMIC release <b>(COSMIC IS IN ALPHA)</b>"
+    "info": "Try out ObsidianOS with System76's COSMIC desktop! <b>No software rendering support! COSMIC is still in alpha.</b>"
   }
 ]
 
