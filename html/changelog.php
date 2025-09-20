@@ -4,135 +4,77 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ObsidianOS Changelog</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
-        
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-        
-        body {
-            font-family: 'Inter', sans-serif;
-            background: #0a0a0f;
-            color: #e6e8eb;
-            line-height: 1.6;
-            min-height: 100vh;
-        }
-        
-
-        
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 4rem 2rem;
-            text-align: center;
-        }
-        
-        .header {
-            margin-bottom: 3rem;
-        }
-        
-        .logo {
-            width: 80px;
-            height: 80px;
-            margin: 0 auto 1.5rem;
-        }
-        
-        .title {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            color: #1f6feb;
-        }
-        
-        .subtitle {
-            font-size: 1.2rem;
-            color: #8b949e;
-            margin-bottom: 2rem;
-        }
-        
-        .content-card {
-            background: #101018;
-            border: 1px solid #2a2a3a;
-            border-radius: 12px;
-            padding: 2rem;
-            margin-bottom: 2rem;
-        }
-        
-        .download-section {
-            margin-bottom: 2rem;
-        }
-        
-        .download-btn {
-            display: inline-block;
-            padding: 0.8rem 1.5rem;
-            font-size: 1rem;
-            font-weight: 600;
-            color: white;
-            background: #1f6feb;
-            border: none;
-            border-radius: 8px;
-            text-decoration: none;
-            transition: background-color 0.2s ease;
-            margin: 0.5rem;
-        }
-        
-        .download-btn:hover {
-            background: #2d7be5;
-        }
-        
-        .secondary-btn {
-            background: #2a2a3a;
-            border: 1px solid #3a3a4a;
-        }
-        
-        .secondary-btn:hover {
-            background: #3a3a4a;
-        }
-        
-        .info-text {
-            color: #8b949e;
-            margin: 1rem 0;
-        }
-        
-        .footer {
-            margin-top: 3rem;
-            padding-top: 2rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            color: #8b949e;
-        }
-        
-        @media (max-width: 768px) {
-            .container {
-                padding: 2rem 1rem;
-            }
-            
-            .title {
-                font-size: 2.5rem;
-            }
-            
-            .content-card {
-                padding: 2rem 1.5rem;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="icon" href="https://obsidianos.xyz/logo.svg" type="image/svg+xml">
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <div class="logo">
-                <a href="https://obsidianos.xyz/"><img src="https://obsidianos.xyz/logo.png" alt="ObsidianOS Logo" style="width: 100%; height: 100%; object-fit: contain;"></a>
+    <div class="background-container"></div>
+    <div class="mouse-follower mouse-follower-1"></div>
+    <div class="mouse-follower mouse-follower-2"></div>
+    <div class="mouse-follower mouse-follower-3"></div>
+    <nav>
+        <div class="nav-container">
+            <div class="nav-left">
+                <img src="https://obsidianos.xyz/logo.svg" alt="ObsidianOS Logo" class="nav-logo">
+                <a href="https://obsidianos.xyz" class="nav-title">ObsidianOS</a>
             </div>
-            <h1 class="title">ObsidianOS Changelog</h1>
+            <div class="nav-links">
+                <a href="https://files.obsidianos.xyz">Downloads</a>
+                <a href="https://wiki.obsidianos.xyz/">Wiki</a>
+                <a href="https://github.com/Obsidian-OS/" target="_blank" rel="noopener noreferrer">GitHub</a>
+                <a href="https://www.reddit.com/r/obsidian_OS/" target="_blank" rel="noopener noreferrer">Reddit</a>
+                <a href="https://dsc.gg/obsidianos" target="_blank" rel="noopener noreferrer">Discord</a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <header>
+            <img src="https://obsidianos.xyz/logo.svg" alt="ObsidianOS Logo" class="logo">
+            <h1 class="main-title">ObsidianOS Changelog</h1>
             <p class="subtitle">Latest version only</p>
+        </header>
+
+        <section class="features">
+            <div class="feature-card">
+                <div>
+                    <h2>Recent Changes</h2>
+                    <pre class="changelog-content"><?php include "../changelog.txt"; ?></pre>
+                </div>
+            </div>
+        </section>
+
+        <div class="download-section">
+            <a href="/" class="download-btn">Back to Downloads</a>
         </div>
-        
-        <p><?php include "../changelog.txt"; ?></p>
-        <div class="footer">
-            <p>Thank you for using ObsidianOS!</p>
+
+        <section class="community">
+            <h2>Stay Updated</h2>
+            <p>Follow our community channels to stay informed about the latest updates and releases.</p>
+            <div class="community-links">
+                <a href="https://www.reddit.com/r/obsidian_OS/" target="_blank" rel="noopener noreferrer" class="community-link">Reddit</a>
+                <a href="https://dsc.gg/obsidianos" target="_blank" rel="noopener noreferrer" class="community-link">Discord</a>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 ObsidianOS Project</p>
+        <div class="footer-links">
+            <a href="https://wiki.obsidianos.xyz/">Wiki</a>
+            <a href="https://github.com/Obsidian-OS/" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="https://sourceforge.net/projects/obsidianos/" target="_blank" rel="noopener noreferrer">SourceForge</a>
         </div>
-    </div>
+    </footer>
+    <script>
+        const followers = document.querySelectorAll('.mouse-follower');
+        document.addEventListener('mousemove', (e) => {
+            followers.forEach((follower, index) => {
+                setTimeout(() => {
+                    follower.style.left = e.pageX + 'px';
+                    follower.style.top = e.pageY + 'px';
+                }, index * 100);
+            });
+        });
+    </script>
 </body>
 </html>
