@@ -457,3 +457,8 @@ footer {
         align-items: center;
     }
 }
+
+.gif-transparent {
+  background-color: transparent; /* optional */
+  mix-blend-mode: lighten;
+}
