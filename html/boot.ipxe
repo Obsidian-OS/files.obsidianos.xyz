@@ -1,0 +1,11 @@
+#!ipxe
+
+menu PXE Boot Menu
+item latest Latest ObsidianOS
+item local Boot Local Disk
+choose target && goto ${target}
+
+:latest kernel https://files.obsidianos.xyz/latest.iso
+boot
+:local
+exit
