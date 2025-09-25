@@ -92,7 +92,6 @@
             fetch('builds.json')
                 .then(response => response.json())
                 .then(builds => {
-                    loadingBar.style.display = 'none';
                     builds.forEach(build => {
                         const card = document.createElement('div');
                         card.classList.add('feature-card');
