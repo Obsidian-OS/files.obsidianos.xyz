@@ -88,9 +88,7 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            const loadingBar = document.getElementById('loading-bar');
             const cardGrid = document.getElementById('builds-container');
-            loadingBar.style.display = 'flex';
             fetch('builds.json')
                 .then(response => response.json())
                 .then(builds => {
@@ -116,7 +114,6 @@
                 })
                 .catch(error => {
                     console.error('Error fetching builds:', error);
-                    loadingBar.style.display = 'none';
                 });
         });
 
