@@ -1,6 +1,7 @@
 html/*.iso
 html/*.iso.sha256
 html/*.iso.sig
+html/~*
 changelog.txt
 mediawiki
 data
