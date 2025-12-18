@@ -42,6 +42,6 @@
     "iso_url": "/latestMicro.iso",
     "sha256_url": "/latestMicro.iso.sha256",
     "gpg_url": "/latestMicro.iso.sig",
-    "info": "The smallest ISO we have, but you need to make your own image. Should be fine for begginers."
+    "info": "The smallest ISO we have, but you need to make your own image. Should be fine for beginners."
   }
 ]
