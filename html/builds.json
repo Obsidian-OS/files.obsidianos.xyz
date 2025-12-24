@@ -33,7 +33,7 @@
     "iso_url": "/latestVoid.iso",
     "sha256_url": "/latestVoid.iso.sha256",
     "gpg_url": "/latestVoid.iso.sig",
-    "info": "Try out ObsidianOS based on Void! <b>Undocumented, not reccomended for beginners</b>. Root password: root"
+    "info": "Try out ObsidianOS based on Void! <b>Undocumented, not reccomended for beginners</b>. Non-Root User Password: root"
   },
   {
     "graphical": false,
