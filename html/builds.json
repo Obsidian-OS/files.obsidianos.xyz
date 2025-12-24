@@ -24,7 +24,7 @@
     "iso_url": "/latestCosmic.iso",
     "sha256_url": "/latestCosmic.iso.sha256",
     "gpg_url": "/latestCosmic.iso.sig",
-    "info": "Try out ObsidianOS with System76's COSMIC desktop! <b>COSMIC is still in beta.</b>"
+    "info": "Try out ObsidianOS with System76's COSMIC desktop!"
   },
   {
     "graphical": false,
