@@ -51,6 +51,6 @@
     "iso_url": "/latestGentoo.iso",
     "sha256_url": "/latestGentoo.iso.sha256",
     "gpg_url": "/latestGentoo.iso.sig",
-    "info": "Try out ObsidianOS based on Void! <b>Undocumented, not reccomended for beginners</b>. Non-Root User Password: user"
+    "info": "Try out ObsidianOS based on Gentoo! <b>Undocumented, not reccomended for beginners</b>. Non-Root User Password: user"
   }
 ]
