@@ -56,7 +56,7 @@
   {
     "graphical": false,
     "name": "Debian Edition",
-    "icon_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/Debian-OpenLogo.svg/960px-Debian-OpenLogo.svg.png",
+    "icon_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/66/Openlogo-debianV2.svg/960px-Openlogo-debianV2.svg.png",
     "iso_url": "/latestDebian.iso",
     "sha256_url": "/latestDebian.iso.sha256",
     "gpg_url": "/latestDebian.iso.sig",
