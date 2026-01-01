@@ -58,7 +58,7 @@
         </section>
     </main>
     <footer>
-        <p>&copy; 2025 ObsidianOS Project</p>
+        <p>&copy; 2026 ObsidianOS Project</p>
         <div class="footer-links">
             <a href="https://wiki.obsidianos.xyz/">Wiki</a>
             <a href="https://github.com/Obsidian-OS/" target="_blank" rel="noopener noreferrer">GitHub</a>
