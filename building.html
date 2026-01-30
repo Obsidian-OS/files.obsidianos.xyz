@@ -33,14 +33,10 @@
         <header>
             <img src="/oboslogo-gif-dark.gif" alt="ObsidianOS Logo" class="logo gif-transparent">
             <h1 class="main-title">Building ISOs</h1>
-            <p class="subtitle">ISOs currently building. You may download the ISOs here but they will soon be replaced by the latest version. Refreshing status in 10 seconds...</p>
+            <p class="subtitle">ISOs currently building. Refreshing status in 10 seconds...</p>
         </header>
         <a href="/changelog.php" class="download-btn secondary-btn">View Changelog</a>
         <a href="https://oddcell.ca/keys" class="download-btn secondary-btn">GPG Keys</a>
-        <section class="features">
-            <div class="card-grid" id="builds-container">
-            </div>
-        </section>
 
         <section class="install-options">
             <h2 style="text-align: center; margin-bottom: 2rem; color: var(--accent-blue); font-size: 2rem;">Installation Options</h2>
@@ -86,36 +82,7 @@
         </div>
     </footer>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const cardGrid = document.getElementById('builds-container');
-            fetch('builds.json')
-                .then(response => response.json())
-                .then(builds => {
-                    builds.forEach(build => {
-                        const card = document.createElement('div');
-                        card.classList.add('feature-card');
-                        let infoText = build.info;
-                        card.innerHTML = `
-                            <div>
-                                <img src="${build.icon_url}" class="card-logo" alt="${build.name} Logo">
-                                <h2>${build.name}</h2>
-                                <p class="info-text">${infoText}</p>
-                            </div>
-                            <div class="download-section">
-                                <a href="${build.iso_url}" class="download-btn">Download ISO</a>
-                                <a href="${build.sha256_url}" class="download-btn secondary-btn">SHA256</a>
-                                <a href="${build.gpg_url}" class="download-btn secondary-btn">Signature</a>
-                            </div>
-                        `;
-                        cardGrid.appendChild(card);
-                    });
-                })
-                .catch(error => {
-                    console.error('Error fetching builds:', error);
-                });
-        });
-
+    <script>});
         const followers = document.querySelectorAll('.mouse-follower');
         document.addEventListener('mousemove', (e) => {
             followers.forEach((follower, index) => {
