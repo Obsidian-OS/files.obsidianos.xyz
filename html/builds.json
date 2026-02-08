@@ -61,5 +61,14 @@
     "sha256_url": "/latestDebian.iso.sha256",
     "gpg_url": "/latestDebian.iso.sig",
     "info": "Try out ObsidianOS based on Debian! <b>Undocumented, not recomended for beginners</b>. Non-Root User Password: user"
+  },
+  {
+    "graphical": false,
+    "name": "Alpine Edition",
+    "icon_url": "https://github.com/alpinelinux.png",
+    "iso_url": "/latestAlpine.iso",
+    "sha256_url": "/latestAlpine.iso.sha256",
+    "gpg_url": "/latestAlpine.iso.sig",
+    "info": "Try out ObsidianOS based on Debian! <b>Undocumented, not recomended for beginners</b>. Non-Root User Password: user"
   }
 ]
