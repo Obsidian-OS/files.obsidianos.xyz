@@ -1,0 +1,11 @@
+Options +Indexes 
+HeaderName HEADER.html 
+IndexIgnore HEADER.html 
+IndexIgnore FOOTER.html 
+ReadmeName FOOTER.html 
+ServerSignature On 
+IndexOptions FancyIndexing HTMLTable SuppressDescription
+Redirect 301 /~odd/static/ros https://raw.githubusercontent.com/TheOddCell/ros/refs/heads/main/ros
+Redirect 301 /~odd/static/= https://raw.githubusercontent.com/TheOddCell/ros/refs/heads/main/=
+Redirect 301 /~odd/static/bbros https://raw.githubusercontent.com/TheOddCell/ros/refs/heads/main/bbros
+ErrorDocument 404 /404.php
