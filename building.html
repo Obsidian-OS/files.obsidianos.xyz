@@ -3,74 +3,88 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BUILDING - ObsidianOS Files</title>
+    <title>BUILDING - ObsidianOS Downloads</title>
     <meta http-equiv="refresh" content="10">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="html/styles.css">
     <link rel="icon" href="https://obsidianos.xyz/logo.svg" type="image/svg+xml">
 </head>
 <body>
     <div class="background-container"></div>
-    <div class="mouse-follower mouse-follower-1"></div>
-    <div class="mouse-follower mouse-follower-2"></div>
-    <div class="mouse-follower mouse-follower-3"></div>
+
     <nav>
         <div class="nav-container" id="nav-container"></div><script>fetch("https://obsidianos.xyz/topbar.html").then(r => r.text()).then(html => {document.getElementById("nav-container").innerHTML = html;});</script>
     </nav>
 
     <main>
-        <header>
-            <img src="/oboslogo-gif-dark.gif" alt="ObsidianOS Logo" class="logo gif-transparent">
-            <h1 class="main-title">Building ISOs</h1>
-            <p class="subtitle">ISOs currently building. Refreshing status in 10 seconds...</p>
+        <header class="hero-section">
+            <div class="hero-content">
+                <div class="hero-logo-container">
+                    <img src="https://obsidianos.xyz/logo.svg" alt="ObsidianOS Logo" class="hero-logo" />
+                    <img src="https://files.obsidianos.xyz/oboslogo-gif-dark.gif" alt="ObsidianOS Animated Logo" class="hero-logo-gif" />
+                </div>
+                <div class="hero-text">
+                    <h1 class="main-title">Building ISOs</h1>
+                    <p class="subtitle">ISOs currently building. Refreshing status in 10 seconds...</p>
+                </div>
+            </div>
         </header>
-        <a href="/changelog.php" class="download-btn secondary-btn">View Changelog</a>
-        <a href="https://oddcell.ca/keys" class="download-btn secondary-btn">GPG Keys</a>
+
+        <div style="text-align: center; margin-bottom: 4rem;">
+            <a href="/changelog.php" class="download-btn">View Changelog</a>
+            <a href="https://oddcell.ca/keys" class="download-btn">GPG Keys</a>
+        </div>
 
         <section class="install-options">
-            <h2 style="text-align: center; margin-bottom: 2rem; color: var(--accent-blue); font-size: 2rem;">Installation Options</h2>
+            <h2 class="section-title">Installation Options</h2>
             <div class="install-grid">
                 <div class="install-card">
-                    <h2>Option 1:</h2><h2>Pre-built ISO</h2>
+                    <div class="install-card-header">
+                        <span class="badge">Option 1</span>
+                        <h3>Pre-built ISO</h3>
+                    </div>
                     <p>The easiest way to get started. Download a pre-built ISO and follow our installation guide.</p>
-                    <p>Editions are listed above.</p>
+                    <p style="color: var(--text-secondary); font-size: 0.9rem;">Editions are listed above.</p>
                 </div>
                 <div class="install-card">
-                    <h2>Option 2:</h2><h2>Build Your Own</h2>
+                    <div class="install-card-header">
+                        <span class="badge">Option 2</span>
+                        <h3>Build Your Own</h3>
+                    </div>
                     <p>For advanced users who want to customize their installation. Create your own ISO from scratch.</p>
-                    <a href="https://github.com/Obsidian-OS/archiso" class="download-btn">Build from Source</a>
+                    <a href="https://github.com/Obsidian-OS/archiso" class="download-btn" style="width: fit-content;">Build from Source</a>
                 </div>
                 <div class="install-card">
-                    <h2>Option 3:</h2><h2>Arch-based Installer</h2>
+                    <div class="install-card-header">
+                        <span class="badge">Option 3</span>
+                        <h3>Arch-based Installer</h3>
+                    </div>
                     <p>Install ObsidianOS directly from an existing Arch Linux system using our installer script.</p>
                     <pre><code>sudo bash -c "$(curl -fsSL https://arbs.obsidianos.xyz)"</code></pre>
                 </div>
                 <div class="install-card">
-                    <h2>Option 4:</h2><h2>Manual install from an Arch-based host</h2>
-                    <p>Install arch-install-scripts and obsidianctl to do an manual install.</p>
-                    <a href="https://aur.archlinux.org/packages/obsidianctl-git" class="download-btn">Get obsidianctl</a>
+                    <div class="install-card-header">
+                        <span class="badge">Option 4</span>
+                        <h3>Manual install</h3>
+                    </div>
+                    <p>Install arch-install-scripts and obsidianctl to do a manual install from an Arch-based host.</p>
+                    <a href="https://aur.archlinux.org/packages/obsidianctl-git" class="download-btn" style="width: fit-content;">Get obsidianctl</a>
                 </div>
             </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2026 ObsidianOS Project</p>
-        <div class="footer-links">
-            <a href="https://wiki.obsidianos.xyz/">Wiki</a>
-            <a href="https://github.com/Obsidian-OS/" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <div class="footer-content">
+            <div class="footer-left">
+                <p class="footer-copyright">&copy; 2026 ObsidianOS Project</p>
+                <p class="footer-tagline">The GNU/Linux distribution with A/B Partitioning</p>
+            </div>
+            <div class="footer-links">
+                <a href="https://wiki.obsidianos.xyz/">Wiki</a>
+                <a href="https://github.com/Obsidian-OS/" target="_blank" rel="noopener noreferrer">GitHub</a>
+            </div>
         </div>
     </footer>
-
-    <script>});
-        const followers = document.querySelectorAll('.mouse-follower');
-        document.addEventListener('mousemove', (e) => {
-            followers.forEach((follower, index) => {
-                setTimeout(() => {
-                    follower.style.left = e.pageX + 'px';
-                    follower.style.top = e.pageY + 'px';
-                }, index * 100);
-            });
-        });
-    </script>
 </body>
 </html>
+
