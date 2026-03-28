@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>404 - ObsidianOS Files</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="/styles.css">
     <link rel="icon" href="https://obsidianos.xyz/logo.svg" type="image/svg+xml">
 </head>
 <body>
@@ -37,7 +37,7 @@ $path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 if (str_starts_with($path, '/latest')) {
   echo "You are looking for an ISO that has not been uploaded or has not built yet. If this page persists for more than a day, you may want to email odd@obsidianos.xyz, the ISO builder, uploader, and server hoster. Thanks for (trying) to use ObsidianOS!";
 } else {
-  echo "The page " . $_SERVER['PHP_SELF'] . " was not found.";
+  echo "The page " . $path . " was not found.";
 }?></p>
     </main>
 
