@@ -1,7 +1,7 @@
 [
   {
     "graphical": false,
-    "name": "Base Edition",
+    "name": "Micro Edition",
     "icon_url": "https://obsidianos.xyz/logo.svg",
     "iso_url": "/latest.iso",
     "sha256_url": "/latest.iso.sha256",
