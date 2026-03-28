@@ -6,7 +6,7 @@
     "iso_url": "/latest.iso",
     "sha256_url": "/latest.iso.sha256",
     "gpg_url": "/latest.iso.sig",
-    "info": "The minimalist ObsidianOS Edition, comes with a TUI installer."
+    "info": "The minimalist ObsidianOS Edition, comes with a TUI installer. <b>Does not come with an SFS; highly reccomended if you have an internet connection and have used Linux before.</b>"
   },
   {
     "graphical": true,
@@ -25,15 +25,6 @@
     "sha256_url": "/latestCosmic.iso.sha256",
     "gpg_url": "/latestCosmic.iso.sig",
     "info": "Try out ObsidianOS with System76's COSMIC desktop!"
-  },
-  {
-    "graphical": false,
-    "name": "Micro Edition",
-    "icon_url": "https://files.obsidianos.xyz/blank.png",
-    "iso_url": "/latestMicro.iso",
-    "sha256_url": "/latestMicro.iso.sha256",
-    "gpg_url": "/latestMicro.iso.sig",
-    "info": "The smallest ISO we have, but you need to make your own image. Should be fine for beginners."
   },
   {
     "graphical": false,
